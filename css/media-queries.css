@@ -1,0 +1,20 @@
+
+/* main page */
+
+/* for larger screen: default style, three images an a row */
+
+/* screen <= 1174  , two images in a row */
+@media screen and (max-width: 1174px) {
+  #restaurants-list li {
+    width: 35%;
+  }
+}
+
+/* screen <= 890px , one image in a row */
+@media screen and (max-width: 890px) {
+  #restaurants-list li {
+    width: 60%;
+  }
+}
+
+/* ------------------------------------------------------------------------ */
