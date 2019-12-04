@@ -1,4 +1,3 @@
-
 /* main page */
 
 /* restaurant images */
@@ -20,3 +19,30 @@
 }
 
 /* ------------------------------------------------------------------------ */
+
+/* restaurant page */
+@media screen and (max-width: 914px) {
+  /* map */
+  .inside #map-container {
+    width: 100%;
+    height: 50%;
+  }
+
+  /* breadcrumb under header */
+  #breadcrumb {
+    position: absolute;
+    right: 0;
+  }
+
+  /* restaurant info */
+  #restaurant-container {
+    width: 100%;
+    /* to show restaurant name  */
+    padding-top: 400px;
+  }
+
+  /* reviews */
+  #reviews-container {
+    width: 100%;
+  }
+}
