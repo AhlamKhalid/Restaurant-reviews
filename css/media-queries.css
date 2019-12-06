@@ -21,6 +21,7 @@
 /* ------------------------------------------------------------------------ */
 
 /* restaurant page */
+
 @media screen and (max-width: 914px) {
   /* map */
   .inside #map-container {
@@ -34,15 +35,22 @@
     right: 0;
   }
 
-  /* restaurant info */
-  #restaurant-container {
-    width: 100%;
-    /* to show restaurant name  */
-    padding-top: 400px;
+  /* width of containers */
+  #restaurant-container,
+  #reviews-container {
+    width: 70%;
   }
 
-  /* reviews */
-  #reviews-container {
-    width: 100%;
+  /* restaurant container */
+  #restaurant-container {
+    /* to show restaurant name  */
+    padding-top: 350px;
+  }
+}
+
+/* reviews */
+@media screen and (max-width: 1173px) {
+  #reviews-list li {
+    width: 80%;
   }
 }
