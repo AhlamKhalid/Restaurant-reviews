@@ -1,3 +1,8 @@
+
+// source in YouTube: https://www.youtube.com/watch?v=ksXwaWHCW6k
+// by: Traversy Media
+// subject: Intro To Service Workers & Caching
+
 // cashe name
 const casheName = "v1";
 
