@@ -36,17 +36,10 @@ initMap = () => {
         }
       ).addTo(newMap);
 
-      disableMapFocus();
-
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
   });
-};
-
-// disable focus on map container
-disableMapFocus = () => {
-  document.querySelector("#map").setAttribute("tabindex", "-1");
 };
 
 /* window.initMap = () => {
@@ -98,9 +91,13 @@ fetchRestaurantFromURL = callback => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById("restaurant-name");
   name.innerHTML = restaurant.name;
+  // say restaurant name
+  name.setAttribute("tabindex", "0");
 
   const address = document.getElementById("restaurant-address");
   address.innerHTML = restaurant.address;
+  // sat address
+  address.setAttribute("tabindex", "0");
 
   const image = document.getElementById("restaurant-img");
   image.className = "restaurant-img";
@@ -125,8 +122,15 @@ fillRestaurantHoursHTML = (
   operatingHours = self.restaurant.operating_hours
 ) => {
   const hours = document.getElementById("restaurant-hours");
+  // say which section is
+  hours.setAttribute("aria-label", "working hours");
+  // say working hours
+  hours.setAttribute("tabindex", "0");
+
   for (let key in operatingHours) {
     const row = document.createElement("tr");
+    // say hours of each day
+    row.setAttribute("tabindex", "0");
 
     const day = document.createElement("td");
     day.innerHTML = key;
@@ -147,6 +151,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById("reviews-container");
   const title = document.createElement("h2");
   title.innerHTML = "Reviews";
+  // say section name
+  title.setAttribute("tabindex", "0");
   container.appendChild(title);
 
   if (!reviews) {
@@ -167,6 +173,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = review => {
   const li = document.createElement("li");
+  // read each review
+  li.setAttribute("tabindex", "0");
   const name = document.createElement("p");
   name.innerHTML = review.name;
   li.appendChild(name);
@@ -194,7 +202,7 @@ fillBreadcrumb = (restaurant = self.restaurant) => {
   const li = document.createElement("li");
   li.innerHTML = restaurant.name;
   // pages in Breadcrumb
-  li.tabIndex = "0";
+  li.setAttribute("tabindex", "0");
   breadcrumb.appendChild(li);
 };
 

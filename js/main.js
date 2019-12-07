@@ -91,15 +91,9 @@ initMap = () => {
     }
   ).addTo(newMap);
 
-  disableMapFocus();
-
   updateRestaurants();
 };
 
-// disable focus on map container
-disableMapFocus = () => {
-  document.querySelector("#map").setAttribute("tabindex", "-1");
-};
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
@@ -166,6 +160,11 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
+  // list of restaurantst
+  // get it focusable
+  ul.setAttribute("tabindex", "0");
+  // add a label
+  ul.setAttribute("aria-label", "list of restaurants");
   addMarkersToMap();
 };
 
@@ -194,10 +193,16 @@ createRestaurantHTML = restaurant => {
   li.append(address);
 
   const more = document.createElement("a");
-  more.innerHTML = "View Details";
+  // more semantic description of link
+  more.innerHTML = `View Details of this restaurant`;
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more);
 
+  // each restaurant
+  // get it focusable
+  li.setAttribute("tabindex", "0");
+  // add a label
+  li.setAttribute("aria-label", restaurant.name);
   return li;
 };
 
