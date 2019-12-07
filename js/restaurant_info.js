@@ -193,6 +193,8 @@ fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById("breadcrumb");
   const li = document.createElement("li");
   li.innerHTML = restaurant.name;
+  // pages in Breadcrumb
+  li.tabIndex = "0";
   breadcrumb.appendChild(li);
 };
 

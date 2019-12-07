@@ -21,21 +21,21 @@
       href="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="css/media-queries.css" />
   </head>
 
   <body class="inside">
     <!-- Beginning header -->
     <header>
+      <h1><a href="/">Restaurant Reviews</a></h1>
       <!-- Beginning nav -->
-      <nav>
-        <h1><a href="/">Restaurant Reviews</a></h1>
+      <nav role="navigation" aria-label="Breadcrumb">
+        <!-- Beginning breadcrumb -->
+        <ul id="breadcrumb">
+          <li><a href="/">Home</a></li>
+        </ul>
+        <!-- End breadcrumb -->
       </nav>
-      <!-- Beginning breadcrumb -->
-      <ul id="breadcrumb">
-        <li><a href="/">Home</a></li>
-      </ul>
-      <!-- End breadcrumb -->
       <!-- End nav -->
     </header>
     <!-- End header -->
@@ -44,7 +44,7 @@
     <main id="maincontent">
       <!-- Beginning map -->
       <section id="map-container">
-        <div id="map"></div>
+        <div id="map" role="application"></div>
       </section>
       <!-- End map -->
       <!-- Beginning restaurant -->
